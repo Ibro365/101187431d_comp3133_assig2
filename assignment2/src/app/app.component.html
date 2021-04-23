@@ -1,0 +1,17 @@
+
+<ul>
+  <li><a routerLink="/home">Hotel</a></li>
+  <li><a routerLink="/booking">Booking </a></li>
+  <li><a routerLink="/signup">Signup</a></li>
+  <li>
+    <div *ngIf="isValid; else isLogout">
+      <a routerLink="/logout">Logout</a>
+    </div>
+
+  </li>
+  <ng-template #isLogout>
+    <a routerLink="/login">Login</a>
+  </ng-template>
+
+</ul>
+<router-outlet></router-outlet>

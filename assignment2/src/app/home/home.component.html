@@ -1,0 +1,38 @@
+
+<form class="row g-3">
+  <div class="col-auto">
+    <label for="txtSearch" class="visually-hidden">Search By City</label>
+    <input type="text" [(ngModel)]="selectedCity" name="txtSearch" class="form-control" id="txtSearch" placeholder="Search By City">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3" (click)="searchByCity()">Search</button>
+  </div>
+</form>
+<br/>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Hotel Name</th>
+      <th scope="col">Street</th>
+      <th scope="col">City</th>
+      <th scope="col">Postal Code</th>
+      <th scope="col">Price</th>
+      <th scope="col">Email</th>
+      <th scope="col">User ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hotel of allHotels">
+      <td>{{hotel.hotel_id}}</td>
+      <td>{{hotel.hotel_name}}</td>
+      <td>{{hotel.street}}</td>
+      <td>{{hotel.city}}</td>
+      <td>{{hotel.postal_code}}</td>
+      <td>{{hotel.price}}</td>
+      <td>{{hotel.email}}</td>
+      <td>{{hotel.user_id}}</td>
+    </tr>
+
+  </tbody>
+</table>

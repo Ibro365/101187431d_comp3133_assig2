@@ -1,0 +1,47 @@
+<form class="row g-3">
+  <div class="col-auto">
+    <label for="txtHotelID" class="visually-hidden">ID</label>
+    <input type="text" [(ngModel)]="bookingsForm.hotel_id" name="txtHotelID" class="form-control" id="txtHotelID" placeholder="Hotel ID">
+  </div>
+  <div class="col-auto">
+    <label for="txtBookingDate" class="visually-hidden">Booking Date</label>
+    <input type="text" [(ngModel)]="bookingsForm.booking_date" name="txtBookingDate" class="form-control" id="txtBookingDate" placeholder="Booking Date">
+  </div>
+  <div class="col-auto">
+    <label for="txtBookingStart" class="visually-hidden">Booking Start</label>
+    <input type="text" [(ngModel)]="bookingsForm.booking_start" name="txtBookingStart" class="form-control" id="txtBookingStart" placeholder="Booking Start">
+  </div>
+  <div class="col-auto">
+    <label for="txtBookingEnd" class="visually-hidden">Booking End</label>
+    <input type="text" [(ngModel)]="bookingsForm.booking_end" name="txtBookingEnd" class="form-control" id="txtBookingEnd" placeholder="Booking End">
+  </div>
+  <div class="col-auto">
+    <label for="txtUserID" class="visually-hidden">User ID</label>
+    <input type="text" [(ngModel)]="bookingsForm.user_id" name="txtBookingDate" class="form-control" id="txtUserID" placeholder="User ID">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3" (click)="newBooking()">Add Booking</button>
+  </div>
+</form>
+<br/>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Booking Date</th>
+      <th scope="col">Booking Start</th>
+      <th scope="col">Booking End</th>
+      <th scope="col">User ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let booking of allBookings">
+      <td>{{booking.hotel_id}}</td>
+      <td>{{booking.booking_date}}</td>
+      <td>{{booking.booking_start}}</td>
+      <td>{{booking.booking_end}}</td>
+      <td>{{booking.user_id}}</td>
+    </tr>
+
+  </tbody>
+</table>
